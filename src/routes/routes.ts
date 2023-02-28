@@ -1,4 +1,5 @@
 import { lazy, LazyExoticComponent } from "react";
+import { ShoppingPage } from "../02-component-patterns/pages/ShoppingPage";
 
 interface Route{
     to: string,
@@ -14,10 +15,10 @@ const Lazy3 = lazy(() => import(/* webpackChunkName: "LazyPage3" */'../01-lazylo
 
 export const routes : Route[] = [
     {
-        to: '/lazy1',
-        path: 'lazy1',
-        Component: Lazy1,
-        name: 'Lazy-1'
+        to: '/shopping',
+        path: 'shopping',
+        Component: ShoppingPage,
+        name: 'Shopping page'
     },
     {
         to: '/lazy2',
