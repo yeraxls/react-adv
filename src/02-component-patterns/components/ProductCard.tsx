@@ -8,7 +8,7 @@ import {ProductImage, ProductTitle, ProductButtons} from "./index"
 export const ProductContext = createContext({} as ProductContextProps)
 const { Provider } = ProductContext;
 
-export const ProductCard = ({ children, product }: ProductCardsProps) => {
+export const ProductCard = ({ children, product, className, style }: ProductCardsProps) => {
   const { counter, increaseBy } = useProduct();
   return (
     <Provider value={{
@@ -16,7 +16,7 @@ export const ProductCard = ({ children, product }: ProductCardsProps) => {
       increaseBy,
       product
     }}>
-      <div className={styles.productCard}>
+      <div className={`${styles.productCard} ${className}`} style={style}>
         {children}
       </div>
     </Provider>
